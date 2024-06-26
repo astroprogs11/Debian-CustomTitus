@@ -116,3 +116,5 @@ cd $builddir
 
 # Use nala
 bash scripts/usenala
+
+\cp ~/    Debian-CustomTitus/dotconfig/.bashrc ~
