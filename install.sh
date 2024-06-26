@@ -19,22 +19,6 @@ setfont /usr/share/consolefonts/Uni3-TerminusBold28x14.psf.gz
 # Clear the screen
 clear
 
-
-# Let user choose the option of the browser installation
-
-echo "Please select the web browser : "
-
-browser_option=("Floorp" "Thorium")
-select web in "${browser_option[@]}"; do
-  if [ "$web" = "Floorp" ]; then
-    web_install="Floorp"
-    break
-  elif [ "$web" = "Thorium" ]; then
-    web_install="Thorium"
-    break
-  fi
-done
-
 # Update packages list and update system
 apt update
 apt upgrade -y
@@ -85,6 +69,8 @@ cd $builddir
 rm -rf Nordzy-cursors
 
 # Install the Web Browser
+$web="Thorium" 
+web_install="Thorium"
 if [[ $web = Floorp ]]; then
   # Install floorp-browser
   nala install apt-transport-https curl -y
