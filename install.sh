@@ -69,7 +69,7 @@ cd $builddir
 rm -rf Nordzy-cursors
 
 # Install the Web Browser
-$web="Thorium" 
+web="Thorium" 
 web_install="Thorium"
 if [[ $web = Floorp ]]; then
   # Install floorp-browser
@@ -117,4 +117,5 @@ cd $builddir
 # Use nala
 bash scripts/usenala
 
-\cp ~/    Debian-CustomTitus/dotconfig/.bashrc ~
+cd $builddir
+cp dotconfig/.bashrc ~
